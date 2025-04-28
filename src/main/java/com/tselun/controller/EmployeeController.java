@@ -5,17 +5,14 @@ import com.tselun.repository.EmployeeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author csdcodes.net
  * @since 2020-3-25
  */
 
-@Controller
+@RestController
 public class EmployeeController {
 
     @Autowired
@@ -23,8 +20,9 @@ public class EmployeeController {
 
     @GetMapping("/")
     private String emp(){
-        return "redirect:/emp-list";
+        return "test";
     }
+
     @PostMapping("/insert")
     private String insert(@ModelAttribute("employee") Employee employee){
         mapper.insert(employee);
