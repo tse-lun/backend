@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    image: crud
+    container_name: crud
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    environment:
+      MYSQL_URL: jdbc:mysql://mysql-db:3306/db
+      MYSQL_USER: steve
+      MYSQL_PASSWORD: kuma04251988
