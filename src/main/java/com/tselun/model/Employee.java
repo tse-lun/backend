@@ -1,21 +1,17 @@
 package com.tselun.model;
 
-/**
- * @author csdcodes.net
- * @since 2020-3-25
- */
 public class Employee {
-    private int id;
+    private long id;
     private String name;
     private String phone;
     private String email;
     private String branch;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

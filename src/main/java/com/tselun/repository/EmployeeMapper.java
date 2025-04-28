@@ -5,28 +5,22 @@ import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
-/**
- * @author csdcodes.net
- * @since 2020-3-25
- */
 @Mapper
 public interface EmployeeMapper {
 
-    @Insert("INSERT INTO employee(name, phone, email, branch) " +
-            " VALUES (#{name}, #{phone}, #{email}, #{branch})")
+    @Insert("insert into employees(name, phone, email, branch) values (#{name}, #{phone}, #{email}, #{branch})")
     int insert(Employee employee);
 
-    @Select("SELECT * FROM employee")
+    @Select("select * from employees")
     List<Employee> findAll();
 
-    @Select("SELECT * FROM employee WHERE id = #{id}")
+    @Select("select * from employees where id = #{id}")
     Employee findById(@Param("id") long id);
 
-    @Update("Update employee set name=#{name}, " +
-            " phone=#{phone}, email=#{email}, branch = #{branch} where id=#{id}")
+    @Update("update employees set name = #{name}, phone = #{phone}, email = #{email}, branch = #{branch} where id = #{id}")
     int update(Employee employee);
 
-    @Delete("DELETE FROM employee WHERE id = #{id}")
+    @Delete("delete from employees where id = #{id}")
     int deleteById(@Param("id") long id);
 
 }
