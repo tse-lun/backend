@@ -13,4 +13,17 @@ public class CrudApplication {
         SpringApplication.run(CrudApplication.class, args);
     }
 
+    // Enable CORS globally
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**") // allow all endpoints
+                        .allowedOrigins("*") // allow all origins
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // allow specific methods
+                        .allowedHeaders("*"); // allow all headers
+            }
+        };
+    }
 }
