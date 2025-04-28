@@ -1,4 +1,4 @@
-package com.tselun.crud;
+package com.tselun.springbootmybatiscrud;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
